@@ -1,0 +1,12 @@
+dist:
+  module: github.com/jpkrohling/devoops-2021
+  name: oops
+  description: OpenTelemetry Collector - Oops Edition
+  version: 1.0.0
+  output_path: ./_build
+  otelcol_version: 0.37.0
+
+receivers:
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver v0.37.0
+exporters:
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/jaegerexporter v0.37.0

@@ -1,0 +1,28 @@
+extensions:
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+  jaeger:
+    protocols:
+      grpc:
+      thrift_binary:
+      thrift_compact:
+      thrift_http:
+
+processors:
+
+exporters:
+  logging:
+    logLevel: debug
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp, jaeger]
+      processors: []
+      exporters: [logging]
+  extensions: []
