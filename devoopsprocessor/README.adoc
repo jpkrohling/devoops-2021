@@ -1,0 +1,6 @@
+Steps:
+
+- Create a go module: `go mod init github.com/jpkrohling/devoops-2021/devoopsprocessor`
+- Create a config.go
+- Create a factory.go
+- Create a processor.go
