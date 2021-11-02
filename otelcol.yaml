@@ -6,23 +6,18 @@ receivers:
       grpc:
       http:
 
-  jaeger:
-    protocols:
-      grpc:
-      thrift_binary:
-      thrift_compact:
-      thrift_http:
-
 processors:
 
 exporters:
-  logging:
-    logLevel: debug
+  jaeger:
+    endpoint: localhost:14250
+    tls:
+      insecure: true
 
 service:
   pipelines:
     traces:
-      receivers: [otlp, jaeger]
+      receivers: [otlp]
       processors: []
-      exporters: [logging]
+      exporters: [jaeger]
   extensions: []
