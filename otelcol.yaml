@@ -7,6 +7,7 @@ receivers:
       http:
 
 processors:
+  devoops:
 
 exporters:
   jaeger:
@@ -18,6 +19,6 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: []
+      processors: [devoops]
       exporters: [jaeger]
   extensions: []
